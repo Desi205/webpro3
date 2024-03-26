@@ -44,12 +44,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                            <i class="fas fa-book-reader"></i>
                                 <span>Data Buku</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                            <i class="fas fa-users"></i>
                                 <span>Data Anggota</span></a>
                         </li>
                     </li>

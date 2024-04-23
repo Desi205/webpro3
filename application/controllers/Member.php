@@ -112,7 +112,7 @@ public function myProfil()
 }
 public function ubahProfil()
 {
-    $data['judul'] = 'Profil Saya';
+
     $user = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
 
     foreach ($user as $a) {
@@ -126,7 +126,7 @@ public function ubahProfil()
     $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim', [
         'required' => 'Nama tidak Boleh Kosong'
         ]);
-
+        $data['judul'] = 'ubah Profil Saya';
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/templates-user/header', $data);
             $this->load->view('member/ubah-anggota', $data);
@@ -176,5 +176,17 @@ public function ubahProfil()
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>');
         redirect('home');
     }
+    if ($this->form_validation->run() == false) {
 
+        $data = [
+            'user' =>"Pengunjung",
+            'judul' => "Katalog Buku",
+            'buku' => $this->ModelBuku->getBuku()->result(),
+        ];
+        $this->load->view('templates/templates-user/header', $data);
+        $this->load->view('buku/daftarbuku', $data);
+        $this->load->view('templates/templates-user/modal');
+        $this->load->view('templates/templates-user/footer', $data);
+    } else {
+}
 }

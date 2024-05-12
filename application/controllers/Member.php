@@ -176,17 +176,5 @@ public function ubahProfil()
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>');
         redirect('home');
     }
-    if ($this->form_validation->run() == false) {
-
-        $data = [
-            'user' =>"Pengunjung",
-            'judul' => "Katalog Buku",
-            'buku' => $this->ModelBuku->getBuku()->result(),
-        ];
-        $this->load->view('templates/templates-user/header', $data);
-        $this->load->view('buku/daftarbuku', $data);
-        $this->load->view('templates/templates-user/modal');
-        $this->load->view('templates/templates-user/footer', $data);
-    } else {
-}
+  
 }

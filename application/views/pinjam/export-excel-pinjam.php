@@ -1,30 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
- <title></title>
-</head>
-<body>
- <style type="text/css">
- .table-data{
-   width: 100%;
-   border-collapse: collapse;
-  }
-
-  .table-data tr th,
-  .table-data tr td{
-   border:1px solid black;
-   font-size: 11pt;
-   font-family:Verdana;
-   padding: 10px 10px 10px 10px;
-  }
-  h3{
-    font-family:Verdana;
-  }
- </style>
+<?php
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: Attachment; filename=$title.xls");
+header("Pragma: no-cache");
+header("Expires:0"); ?>
 
  <h3><center>Laporan Data Peminjaman Buku</center></h3>
  <br/>
- <table class="table-data">
+ <table border="1">
   <thead>
    <tr>
     <th>No</th>
@@ -57,5 +39,4 @@
   ?>
  </tbody>
 </table>
-</body>
-</html>
+
